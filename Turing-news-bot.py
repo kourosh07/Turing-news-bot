@@ -14,3 +14,6 @@ NEWS_API_KEY = "your_token"
 
 # CoinGecko API for Bitcoin price
 COINGECKO_API_URL = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
+
+# NewsAPI endpoint for programming-related news in Farsi
+news_url = "https://newsapi.org/v2/everything"

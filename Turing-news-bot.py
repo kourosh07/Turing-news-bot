@@ -37,3 +37,30 @@ def load_group_chat_ids():
         with open(GROUP_CHAT_IDS_FILE, "r") as file:
             return json.load(file)
     return []
+
+# Save group chat IDs to file
+def save_group_chat_ids(group_chat_ids):
+    with open(GROUP_CHAT_IDS_FILE, "w") as file:
+        json.dump(group_chat_ids, file)
+
+# Fetch programming-related news
+async def fetch_programming_news():
+    try:
+        response = requests.get(news_url, params=news_params)
+        response.raise_for_status()
+        data = response.json()
+        return data.get("articles", [])
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching news: {e}")
+        return []
+
+
+
+
+
+
+
+
+
+
+

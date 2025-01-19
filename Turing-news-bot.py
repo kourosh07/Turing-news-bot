@@ -27,3 +27,13 @@ news_params = {
     "sortBy": "publishedAt",  # Sort by latest news
     "pageSize": 10  # Fetch 10 articles
 }
+
+# File to store group chat IDs
+GROUP_CHAT_IDS_FILE = "group_chat_ids.json"
+
+# Load group chat IDs from file
+def load_group_chat_ids():
+    if os.path.exists(GROUP_CHAT_IDS_FILE):
+        with open(GROUP_CHAT_IDS_FILE, "r") as file:
+            return json.load(file)
+    return []

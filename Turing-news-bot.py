@@ -71,6 +71,10 @@ async def send_daily_news(context: ContextTypes.DEFAULT_TYPE):
     print("Daily news job triggered at:", datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     print("Group chat IDs:", group_chat_ids)
 
+    programming_news = await fetch_programming_news()
+    bitcoin_price = await fetch_bitcoin_price()
+    current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+
 
 
 

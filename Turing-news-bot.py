@@ -103,6 +103,14 @@ async def send_daily_news(context: ContextTypes.DEFAULT_TYPE):
     # End the message with a warm sign-off
     message += "با آرزوی بهترین‌ها برای شما,\nتیم پژوهشی تورینگ 🚀"
 
+     # Send the message to all groups
+    for chat_id in group_chat_ids:
+        await context.bot.send_message(
+            chat_id=chat_id,
+            text=message,
+            parse_mode="Markdown",
+            disable_web_page_preview=True
+        )
 
 
 

@@ -122,3 +122,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         "برای دریافت اخبار همین الان، از دستور /news استفاده کنید."
     )
 
+# News command handler
+async def news(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    programming_news = await fetch_programming_news()
+    bitcoin_price = await fetch_bitcoin_price()
+    current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+

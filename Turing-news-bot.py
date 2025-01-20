@@ -54,8 +54,16 @@ async def fetch_programming_news():
         print(f"Error fetching news: {e}")
         return []
 
-
-
+# Fetch Bitcoin price
+async def fetch_bitcoin_price():
+    try:
+        response = requests.get(COINGECKO_API_URL)
+        response.raise_for_status()
+        data = response.json()
+        return data["bitcoin"]["usd"]
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching Bitcoin price: {e}")
+        return None
 
 
 

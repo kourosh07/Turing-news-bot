@@ -75,6 +75,11 @@ async def send_daily_news(context: ContextTypes.DEFAULT_TYPE):
     bitcoin_price = await fetch_bitcoin_price()
     current_date = datetime.datetime.now().strftime("%Y-%m-%d")
 
+    # Start the message with a friendly greeting
+    message = f"🌞 **صبح بخیر!**\n\n"
+    message += f"امروز روز {current_date} هست و من اینجا هستم تا شما را با آخرین اخبار برنامه‌نویسی و فناوری به روز کنم. 😊\n\n"
+
+
 
 
 

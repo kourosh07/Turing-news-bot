@@ -65,8 +65,11 @@ async def fetch_bitcoin_price():
         print(f"Error fetching Bitcoin price: {e}")
         return None
 
-
-
+# Send daily news to groups
+async def send_daily_news(context: ContextTypes.DEFAULT_TYPE):
+    group_chat_ids = load_group_chat_ids()
+    print("Daily news job triggered at:", datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    print("Group chat IDs:", group_chat_ids)
 
 
 

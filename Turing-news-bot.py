@@ -188,3 +188,10 @@ def main() -> None:
 
     application = Application.builder().token(TELEGRAM_TOKEN).build()
 
+    # Schedule the daily news job at 7:00 AM Tehran time
+    job_queue = application.job_queue
+    job_queue.run_daily(
+        send_daily_news,
+        time=datetime.time(hour=7, minute=0, second=0, tzinfo=tehran_tz),  # 7:00 AM
+        days=(0, 1, 2, 3, 4, 5, 6)
+    )

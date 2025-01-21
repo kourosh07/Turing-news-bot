@@ -135,5 +135,22 @@ async def news(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     # Add Bitcoin price section
     if bitcoin_price:
         message += f"💰 **قیمت بیت‌کوین امروز:** ${bitcoin_price}\n\n"
+    
+    # Add programming news section
+    if programming_news:
+        message += "📰 **آخرین اخبار برنامه‌نویسی و فناوری به فارسی:**\n\n"
+        for article in programming_news[:10]:  # Show up to 10 articles
+            title = article.get('title', 'بدون عنوان')
+            description = article.get('description', 'بدون توضیحات')
+            url = article.get('url', '#')
+            source = article.get('source', {}).get('name', 'منبع نامعلوم')
+            message += (
+                f"🔹 **{title}**\n"
+                f"📝 *{description}*\n"
+                f"🌐 *منبع:* {source}\n"
+                f"🔗 [مطالعه بیشتر]({url})\n\n"
+            )
+    else:
+        message += "❌ متأسفانه امروز خبری برای برنامه‌نویسی پیدا نکردم. اما نگران نباشید، فردا دوباره تلاش می‌کنم! 😊\n\n"
 
 

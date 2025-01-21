@@ -159,3 +159,20 @@ async def news(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(message, parse_mode="Markdown", disable_web_page_preview=True)
 
 
+# Add group command handler
+async def add_group(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    chat_id = update.message.chat_id
+    group_chat_ids = load_group_chat_ids()
+    if chat_id not in group_chat_ids:
+        group_chat_ids.append(chat_id)
+        save_group_chat_ids(group_chat_ids)
+        await update.message.reply_text(
+            "این گروه به لیست دریافت اخبار روزانه اضافه شد! 😊\n\n"
+            "از این به بعد، هر روز صبح ساعت ۷ اخبار جدید را برای شما ارسال می‌کنم."
+        )
+    else:
+        await update.message.reply_text(
+            "این گروه قبلاً اضافه شده است. 😊\n\n"
+            "نگران نباشید، من هر روز صبح اخبار جدید را برای شما ارسال می‌کنم."
+        )
+

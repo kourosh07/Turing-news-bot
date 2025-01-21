@@ -181,5 +181,10 @@ def main() -> None:
     # Define the Tehran time zone
     tehran_tz = pytz.timezone('Asia/Tehran')
 
+    # Register command handlers
+    application.add_handler(CommandHandler("start", start))
+    application.add_handler(CommandHandler("news", news))
+    application.add_handler(CommandHandler("add_group", add_group))
+
     application = Application.builder().token(TELEGRAM_TOKEN).build()
 

@@ -195,3 +195,11 @@ def main() -> None:
         time=datetime.time(hour=7, minute=0, second=0, tzinfo=tehran_tz),  # 7:00 AM
         days=(0, 1, 2, 3, 4, 5, 6)
     )
+
+    
+    # Start the bot
+    application.run_polling()
+    
+
+if __name__ == '__main__':
+    main()

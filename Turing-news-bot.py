@@ -127,4 +127,9 @@ async def news(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     programming_news = await fetch_programming_news()
     bitcoin_price = await fetch_bitcoin_price()
     current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+    
+    # Start the message with a friendly greeting
+    message = f"🌞 **سلام!**\n\n"
+    message += f"امروز روز {current_date} هست و من اینجا هستم تا شما را با آخرین اخبار برنامه‌نویسی و فناوری به روز کنم. 😊\n\n"
+
 

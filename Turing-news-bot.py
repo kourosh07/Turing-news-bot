@@ -152,5 +152,10 @@ async def news(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             )
     else:
         message += "❌ متأسفانه امروز خبری برای برنامه‌نویسی پیدا نکردم. اما نگران نباشید، فردا دوباره تلاش می‌کنم! 😊\n\n"
+    
+    # End the message with a warm sign-off
+    message += "با آرزوی بهترین‌ها برای شما,\nتیم پژوهشی تورینگ 🚀"
+
+    await update.message.reply_text(message, parse_mode="Markdown", disable_web_page_preview=True)
 
 

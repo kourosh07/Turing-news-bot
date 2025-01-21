@@ -176,3 +176,10 @@ async def add_group(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             "نگران نباشید، من هر روز صبح اخبار جدید را برای شما ارسال می‌کنم."
         )
 
+# Main function to run the bot
+def main() -> None:
+    # Define the Tehran time zone
+    tehran_tz = pytz.timezone('Asia/Tehran')
+
+    application = Application.builder().token(TELEGRAM_TOKEN).build()
+

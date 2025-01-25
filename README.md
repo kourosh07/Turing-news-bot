@@ -12,3 +12,9 @@ A Telegram bot that fetches and delivers the latest programming and technology n
 - **Custom Greetings and Signatures**: Messages start with a friendly greeting and end with a signature from the Turing Research Team.
 
 ## Commands
+
+- `/start`: Welcomes the user and provides instructions.
+- `/news`: Fetches and sends the latest programming and technology news.
+- `/add_group`: Adds the group to the daily news delivery list.
+- `/help`: Displays a list of available commands and their usage.
+

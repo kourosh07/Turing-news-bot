@@ -18,3 +18,4 @@ A Telegram bot that fetches and delivers the latest programming and technology n
 - `/add_group`: Adds the group to the daily news delivery list.
 - `/help`: Displays a list of available commands and their usage.
 
+## Setup

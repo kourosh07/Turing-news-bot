@@ -24,4 +24,3 @@ A Telegram bot that fetches and delivers the latest programming and technology n
 - A Telegram bot token from [BotFather](https://core.telegram.org/bots#botfather)
 - A NewsAPI key from [NewsAPI](https://newsapi.org/)
 
-### Installation
